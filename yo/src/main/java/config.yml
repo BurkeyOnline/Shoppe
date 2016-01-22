@@ -1,2 +1,34 @@
 # Version 1.0.0
 # Created by CJ Burkey
+
+# Shop name
+Inv Name: '&2Shoppe'
+
+# Sell percent
+# 50% = 0.5
+Sell Per: 0.25
+
+# Tabs
+# id,name,icon:data
+tabs:
+  - 0,&2Building Blocks,BRICK:0
+  - 1,&2Decorations Blocks,DOUBLE_PLANT:5
+  - 2,&2Redstone,REDSTONE:0
+  - 3,&2Transportation,POWERED_RAIL:0
+  - 4,&2Miscellaneous,LAVA_BUCKET:0
+  - 5,&2Foodstuffs,APPLE:0
+  - 6,&2Tools,IRON_AXE:0
+  - 7,&2Combat,GOLD_SWORD:0
+  - 8,&2Materials,STICK:0
+
+# Items
+# tabid,item/block:data,buy
+items:
+  - 0,STONE:0
+  - 0,STONE:1
+  - 0,STONE:2
+  - 0,STONE:3
+  - 0,STONE:4
+  - 0,STONE:5
+  - 0,STONE:6
+  - 0,GRASS:0
