@@ -61,7 +61,7 @@ public class ClickEvent implements Listener {
 						}
 					}
 				} else if(e.isRightClick()) { // Buy
-					if(Util.take(p, sell)) {
+					if(Util.take(p, buy)) {
 						ItemStack s = new ItemStack(stack.getType(), 1);
 						p.getInventory().addItem(s);
 					}
