@@ -42,18 +42,26 @@ public class ClickEvent implements Listener {
 				double buy = Double.parseDouble(lore1.split(" ")[1].replaceAll("[^\\.0123456789]",""));
 				double sell = Double.parseDouble(lore2.split(" ")[1].replaceAll("[^\\.0123456789]",""));
 				
-				if(e.isLeftClick()) {
-					if(Util.take(p, buy)) {
+				if(e.isLeftClick()) { // Sell
+					if(Util.give(p, sell)) {
 						ItemStack s = new ItemStack(stack.getType(), 1);
-						p.getInventory().addItem(s);
+						for(ItemStack itemStack : p.getInventory()) {
+							if(itemStack.getType().equals(s.getType()) && itemStack.getAmount() > 0) {
+								itemStack.setAmount(itemStack.getAmount() - 1);
+							}
+						}
 					}
-				} else if(e.isShiftClick()) {
+				} else if(e.isShiftClick()) { // Sell 16
 					if(Util.give(p, sell * 16)) {
 						ItemStack s = new ItemStack(stack.getType(), 16);
-						p.getInventory().addItem(s);
+						for(ItemStack itemStack : p.getInventory()) {
+							if(itemStack.getType().equals(s.getType()) && itemStack.getAmount() > 15) {
+								itemStack.setAmount(itemStack.getAmount() - 16);
+							}
+						}
 					}
-				} else if(e.isRightClick()) {
-					if(Util.give(p, sell)) {
+				} else if(e.isRightClick()) { // Buy
+					if(Util.take(p, sell)) {
 						ItemStack s = new ItemStack(stack.getType(), 1);
 						p.getInventory().addItem(s);
 					}
