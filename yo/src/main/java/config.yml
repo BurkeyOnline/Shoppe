@@ -122,3 +122,5 @@ items:
   - 0,PACKED_ICE:0,0
   - 0,RED_SANDSTONE:0,0
   - 0,RED_SANDSTONE_STAIRS:0,0
+  # Decoration Blocks
+  - 1,SAPLING:0,0
