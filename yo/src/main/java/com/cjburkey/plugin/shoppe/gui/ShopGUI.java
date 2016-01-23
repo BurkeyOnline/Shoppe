@@ -35,6 +35,7 @@ public class ShopGUI {
 		List<ShopItem> list = Load.getItemsForTab(tab.id);
 		
 		int start = 45 * (page - 1);
+		double pages = Math.ceil((double) list.size() / 45d);
 		
 		for(int j = start; j < (45 * (page - 1)) + 45; j ++) {
 			if(j < list.size()) {
@@ -49,6 +50,17 @@ public class ShopGUI {
 				inv.addItem(item);
 			}
 		}
+		
+		ItemStack back = Util.nameStack(Util.stringToItem("SIGN", 0), "&2Back");
+		ItemStack forw = Util.nameStack(Util.stringToItem("SIGN", 0), "&2Next");
+		ItemStack exit = Util.nameStack(Util.stringToItem("BARRIER", 0), "&4Home");
+		
+		back = Util.loreStack(back, "" + (page - 1), tab.name, "Move");
+		forw = Util.loreStack(forw, "" + (page + 1), tab.name, "Move");
+		
+		if(page > 1) inv.setItem(inv.getSize() - 2, back);
+		if(page < pages) inv.setItem(inv.getSize() - 1, forw);
+		inv.setItem(inv.getSize() - 9, exit);
 		
 		p.openInventory(inv);
 	}

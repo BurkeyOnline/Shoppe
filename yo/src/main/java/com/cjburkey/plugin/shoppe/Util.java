@@ -1,10 +1,13 @@
 package com.cjburkey.plugin.shoppe;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.economy.EconomyResponse;
 
@@ -49,6 +52,24 @@ public class Util {
 	public static final boolean give(Player p, double amt) {
 		EconomyResponse r = Shoppe.getEcon().depositPlayer(p, amt);
 		return r.transactionSuccess();
+	}
+	
+	public static final ItemStack nameStack(ItemStack s, String name) {
+		ItemMeta m = s.getItemMeta();
+		m.setDisplayName(color(name));
+		s.setItemMeta(m);
+		return s;
+	}
+	
+	public static final ItemStack loreStack(ItemStack s, String lore1, String lore2, String lore3) {
+		ItemMeta m = s.getItemMeta();
+		List<String> list = new ArrayList<String>();
+		list.add(lore1);
+		if(!lore2.trim().equals("")) list.add(lore2);
+		if(!lore3.trim().equals("")) list.add(lore3);
+		m.setLore(list);
+		s.setItemMeta(m);
+		return s;
 	}
 	
 }

@@ -1,5 +1,6 @@
 package com.cjburkey.plugin.shoppe.event;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,26 +36,34 @@ public class ClickEvent implements Listener {
 
 			e.setCancelled(true);
 			
-			String lore1 = stack.getItemMeta().getLore().get(0);
-			String lore2 = stack.getItemMeta().getLore().get(1);
-			double buy = Double.parseDouble(lore1.split(" ")[1].replaceAll("[^\\.0123456789]",""));
-			double sell = Double.parseDouble(lore2.split(" ")[1].replaceAll("[^\\.0123456789]",""));
-			
-			if(e.isLeftClick()) {
-				if(Util.take(p, buy)) {
-					ItemStack s = new ItemStack(stack.getType(), 1);
-					p.getInventory().addItem(s);
+			if(stack.getType() != Material.BARRIER && stack.getItemMeta().getLore().size() == 2) {
+				String lore1 = stack.getItemMeta().getLore().get(0);
+				String lore2 = stack.getItemMeta().getLore().get(1);
+				double buy = Double.parseDouble(lore1.split(" ")[1].replaceAll("[^\\.0123456789]",""));
+				double sell = Double.parseDouble(lore2.split(" ")[1].replaceAll("[^\\.0123456789]",""));
+				
+				if(e.isLeftClick()) {
+					if(Util.take(p, buy)) {
+						ItemStack s = new ItemStack(stack.getType(), 1);
+						p.getInventory().addItem(s);
+					}
+				} else if(e.isShiftClick()) {
+					if(Util.give(p, sell * 16)) {
+						ItemStack s = new ItemStack(stack.getType(), 16);
+						p.getInventory().addItem(s);
+					}
+				} else if(e.isRightClick()) {
+					if(Util.give(p, sell)) {
+						ItemStack s = new ItemStack(stack.getType(), 1);
+						p.getInventory().addItem(s);
+					}
 				}
-			} else if(e.isShiftClick()) {
-				if(Util.give(p, sell * 16)) {
-					ItemStack s = new ItemStack(stack.getType(), 16);
-					p.getInventory().addItem(s);
-				}
-			} else if(e.isRightClick()) {
-				if(Util.give(p, sell)) {
-					ItemStack s = new ItemStack(stack.getType(), 1);
-					p.getInventory().addItem(s);
-				}
+			} else if(stack.getType() != Material.BARRIER && stack.getItemMeta().getLore().size() == 3) {
+				int page = Integer.parseInt(stack.getItemMeta().getLore().get(0));
+				String tab = stack.getItemMeta().getLore().get(1);
+				ShopGUI.tabGUI(p, Shoppe.getEcon(), Load.getTab(tab), page);
+			} else if(stack.getType().equals(Material.BARRIER)) {
+				ShopGUI.open(p);
 			}
 		}
 	}

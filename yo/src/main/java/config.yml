@@ -25,6 +25,7 @@ tabs:
 # Items
 # tabid,item/block:data,buy
 items:
+  # Building Blocks
   - 0,STONE:0,75
   - 0,STONE:1,75
   - 0,STONE:2,75
@@ -62,13 +63,13 @@ items:
   - 0,WOOL:0,50
   - 0,GOLD_BLOCK:0,3000
   - 0,IRON_BLOCK:0,1500
-  - 0,STONE_SLAB:0,5
-  - 0,STONE_SLAB:1,5
-  - 0,STONE_SLAB:3,5
-  - 0,STONE_SLAB:4,5
-  - 0,STONE_SLAB:5,5
-  - 0,STONE_SLAB:6,5
-  - 0,STONE_SLAB:7,5
+  - 0,STEP:0,5
+  - 0,STEP:1,5
+  - 0,STEP:3,5
+  - 0,STEP:4,5
+  - 0,STEP:5,5
+  - 0,STEP:6,5
+  - 0,STEP:7,5
   - 0,BRICK:0,100
   - 0,BOOKSHELF:0,300
   - 0,OBSIDIAN:0,3000
@@ -81,16 +82,16 @@ items:
   - 0,CLAY:0,0
   - 0,PUMPKIN:0,0
   - 0,NETHERRACK:0,0
-  - 0,SOULSAND:0,0
+  - 0,SOUL_SAND:0,0
   - 0,GLOWSTONE:0,0
-  - 0,STONEBRICK:0,0
+  - 0,SMOOTH_BRICK:0,0
   - 0,MELON_BLOCK:0,0
   - 0,BRICK_STAIRS:0,0
-  - 0,STONE_BRICK_STAIRS:0,0
-  - 0,MYCELIUM:0,0
+  - 0,SMOOTH_STAIRS:0,0
+  - 0,MYCEL:0,0
   - 0,NETHER_BRICK:0,0
   - 0,NETHER_BRICK_STAIRS:0,0
-  - 0,END_STONE:0,0
+  - 0,ENDER_STONE:0,0
   - 0,WOOD_STEP:1,0
   - 0,WOOD_STEP:2,0
   - 0,WOOD_STEP:3,0
@@ -107,8 +108,8 @@ items:
   - 0,QUARTZ_ORE:0,0
   - 0,QUARTZ_BLOCK:0,0
   - 0,QUARTZ_STAIRS:0,0
-  - 0,LOG2:0,0
-  - 0,LOG2:1,0
+  - 0,LOG_2:0,0
+  - 0,LOG_2:1,0
   - 0,ACACIA_STAIRS:0,0
   - 0,DARK_OAK_STAIRS:0,0
   - 0,PRISMARINE:0,0
@@ -116,7 +117,7 @@ items:
   - 0,PRISMARINE:2,0
   - 0,SEA_LANTERN:0,0
   - 0,HAY_BLOCK:0,0
-  - 0,HARDENED_CLAY:0,0
+  - 0,HARD_CLAY:0,0
   - 0,COAL_BLOCK:0,0
   - 0,PACKED_ICE:0,0
   - 0,RED_SANDSTONE:0,0

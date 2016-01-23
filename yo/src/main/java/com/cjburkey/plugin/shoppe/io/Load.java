@@ -44,6 +44,7 @@ public class Load {
 			int tab = Integer.parseInt(split[0]);
 			double buy = Double.parseDouble(split[2]);
 			String[] its = split[1].split(":");
+			Util.log("&2" + its[0]);
 			items.add(new ShopItem(tab, Util.stringToItem(its[0], Integer.parseInt(its[1])), buy));
 		}
 		return items;
