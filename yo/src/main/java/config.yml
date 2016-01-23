@@ -26,13 +26,13 @@ tabs:
 # tabid,item/block:data,buy
 items:
   # Building Blocks
-  - 0,STONE:0,75
-  - 0,STONE:1,75
-  - 0,STONE:2,75
-  - 0,STONE:3,75
-  - 0,STONE:4,75
-  - 0,STONE:5,75
-  - 0,STONE:6,75
+  - 0,STONE:0,150
+  - 0,STONE:1,150
+  - 0,STONE:2,150
+  - 0,STONE:3,150
+  - 0,STONE:4,150
+  - 0,STONE:5,150
+  - 0,STONE:6,150
   - 0,GRASS:0,50
   - 0,DIRT:0,20
   - 0,DIRT:1,20
@@ -73,7 +73,7 @@ items:
   - 0,BRICK:0,100
   - 0,BOOKSHELF:0,300
   - 0,OBSIDIAN:0,3000
-  - 0,WOOD_STAIRS:0,5
+  - 0,WOOD_STAIRS:0,152
   - 0,DIAMOND_ORE:0,0
   - 0,COBBLESTONE_STAIRS:0,0
   - 0,REDSTONE_ORE:0,0
