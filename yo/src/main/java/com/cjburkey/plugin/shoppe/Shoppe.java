@@ -2,6 +2,7 @@ package com.cjburkey.plugin.shoppe;
 
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import com.cjburkey.plugin.shoppe.event.ClickEvent;
 import com.cjburkey.plugin.shoppe.io.Load;
 import com.cjburkey.plugin.shoppe.tabs.ShopTab;
 import net.milkbowl.vault.economy.Economy;
@@ -20,9 +21,10 @@ public class Shoppe extends JavaPlugin {
 		} else Util.log("&2Vault found! Should be working.");
 		
 		getCommand("shop").setExecutor(new Shop());
+		getServer().getPluginManager().registerEvents(new ClickEvent(), this);
 		
 		for(ShopTab t : Load.getTabs()) {
-			Util.log(t.name + " - " + t.id + " - " + t.icon.getItemMeta().getDisplayName());
+			Util.log(t.name + " - " + t.id);
 		}
 	}
 	

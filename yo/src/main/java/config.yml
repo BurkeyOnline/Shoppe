@@ -6,6 +6,7 @@ Inv Name: '&2Shoppe'
 
 # Sell percent
 # 50% = 0.5
+# 5% = 0.05
 Sell Per: 0.25
 
 # Tabs
@@ -24,11 +25,11 @@ tabs:
 # Items
 # tabid,item/block:data,buy
 items:
-  - 0,STONE:0
-  - 0,STONE:1
-  - 0,STONE:2
-  - 0,STONE:3
-  - 0,STONE:4
-  - 0,STONE:5
-  - 0,STONE:6
-  - 0,GRASS:0
+  - 0,STONE:0,20
+  - 0,STONE:1,20
+  - 0,STONE:2,20
+  - 0,STONE:3,20
+  - 0,STONE:4,20
+  - 0,STONE:5,20
+  - 0,STONE:6,20
+  - 0,GRASS:0,10
