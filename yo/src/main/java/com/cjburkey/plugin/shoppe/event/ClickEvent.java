@@ -23,7 +23,7 @@ public class ClickEvent implements Listener {
 			ShopTab t = Load.getTab(name);
 			e.setCancelled(true);
 			if(t != null) {
-				ShopGUI.tabGUI(p, Shoppe.getEcon(), t);
+				ShopGUI.tabGUI(p, Shoppe.getEcon(), t, 1);
 			} else {
 				p.closeInventory();
 				Util.log("&4Error!");

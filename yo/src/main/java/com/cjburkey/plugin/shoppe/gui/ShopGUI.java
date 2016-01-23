@@ -29,18 +29,25 @@ public class ShopGUI {
 		p.openInventory(inv);
 	}
 	
-	public static final void tabGUI(Player p, Economy econ, ShopTab tab) {
+	public static final void tabGUI(Player p, Economy econ, ShopTab tab, int page) {
 		Inventory inv = Bukkit.createInventory(p, 54, Util.getCFString("Inv Name") + " - " + tab.name);
 		
-		for(ShopItem i : Load.getItemsForTab(tab.id)) {
-			ItemStack item = i.item.clone();
-			ItemMeta meta = item.getItemMeta();
-			List<String> lore = new ArrayList<String>();
-			lore.add(Util.color("&2Buy: " + econ.format(i.buy)));
-			lore.add(Util.color("&4Sell: " + econ.format(Util.buyToSell(i.buy))));
-			meta.setLore(lore);
-			item.setItemMeta(meta);
-			inv.addItem(item);
+		List<ShopItem> list = Load.getItemsForTab(tab.id);
+		
+		int start = 45 * (page - 1);
+		
+		for(int j = start; j < (45 * (page - 1)) + 45; j ++) {
+			if(j < list.size()) {
+				ShopItem i = list.get(j);
+				ItemStack item = i.item.clone();
+				ItemMeta meta = item.getItemMeta();
+				List<String> lore = new ArrayList<String>();
+				lore.add(Util.color("&2Buy: " + econ.format(i.buy)));
+				lore.add(Util.color("&4Sell: " + econ.format(Util.buyToSell(i.buy))));
+				meta.setLore(lore);
+				item.setItemMeta(meta);
+				inv.addItem(item);
+			}
 		}
 		
 		p.openInventory(inv);
